@@ -1,0 +1,184 @@
+@import './var-color';
+@import './mix';
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include rem(22);
+}
+p, a{
+  @include rem(14);
+}
+small{
+  @include rem(10);
+  opacity: 70%;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  @include background-color(light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+  text-align: center; 
+}
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card-header {
+  @include background-color(dark);
+  @include color(light);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-body{
+  width: 100%; 
+  margin-bottom:10px;
+}
+
+hr {
+  border: 1px solid #ccc; 
+  margin-top: 20px;      
+  margin-bottom: 10px;
+  width: 96%;   
+}
+
+.actions {
+  display: flex; 
+  gap: 8px;
+}
+
+.btn{
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;    
+  @include color(light);
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn-edit{
+  @include background-color(light); 
+}
+.btn-delete{
+  @include background-color(light);
+}
+.btn-header{
+  @include background-color(primary);
+}
+.btn-form{
+  @include background-color(secondary);
+}
+
+.table {  
+  width: 100%;
+  border-collapse: collapse; 
+}
+.table thead th {
+  @include background-color(table);
+  padding: 10px;   
+}
+.table tbody td {
+  padding: 10px; 
+  border: 1px solid #f1f1f1;
+}
+.table tbody tr:hover {
+  @include background-color(table);
+}
+
+.form-group{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 15px;
+}
+.form-info{
+  display: flex;
+  flex-direction: column;  
+  gap: 20px;  
+}
+.personal-data{
+  display: flex;
+  gap: 20px;
+}
+.other-data{
+  display: flex;  
+  align-items: center;
+  gap: 20px;
+}
+input{
+  height: 30px;
+}
+.form-group .personal-data input{
+  width: 230px;  
+}
+.age-input{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px; 
+}
+
+.pagination{
+  display: 'flex';
+   justify-Content: 'center';
+   align-Items: 'center';
+   margin: 20px 20px;
+}
+.prev-button{
+  padding: '5px 10px';
+  margin-right: '10px' 
+}
+.next-button{
+  padding: '5px 10px'; 
+  margin-left: '10px'
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.modal-buttons {
+  margin-top: 20px;
+}
+.modal-buttons .btn {
+  margin: 0 10px;
+  padding: 10px 20px; 
+  border-radius: 3px;  
+}
+.btn-confirm {
+  @include background-color(primary);
+  @include color(light);
+}
+.btn-cancel {
+  @include background-color(danger);
+  @include color(light);
+}
+

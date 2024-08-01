@@ -1,0 +1,27 @@
+$colors: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  danger: #e74c3c,
+  warning: #f1c40f,
+  info: #1abc9c,
+  light: #ecf0f1,
+  dark: #34495e
+);
+
+$backgrounds-color: (  
+  primary: #3498db ,
+  secondary: #2ecc71,
+  danger: #dc3545,
+  warning: #f1c40f,
+  table: #f1f1f1,
+  light: #fff,
+  dark: #343a40
+);
+
+@mixin color($color-name) {
+  color: map-get($colors, $color-name);
+}
+
+@mixin background-color($background-color-name) {
+  background-color: map-get($backgrounds-color, $background-color-name);
+}
